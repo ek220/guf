@@ -1,4 +1,4 @@
-package f
+package guf
 
 // CloneSlice returns copy of source slice.
 func CloneSlice[T any](s []T) []T {

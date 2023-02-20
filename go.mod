@@ -1,4 +1,4 @@
-module github.com/ek220/f
+module github.com/ek220/guf
 
 go 1.20
 

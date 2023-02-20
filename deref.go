@@ -1,4 +1,4 @@
-package f
+package guf
 
 // Ptr return pointer to value.
 func Ptr[T any](value T) *T {

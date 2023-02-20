@@ -1,4 +1,4 @@
-package f_test
+package guf_test
 
 type ts struct {
 	P *uint64

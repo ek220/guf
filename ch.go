@@ -1,4 +1,4 @@
-package f
+package guf
 
 // SliceToCh returns channel containing the slice values.
 func SliceToCh[T any](s []T) <-chan T {

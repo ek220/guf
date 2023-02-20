@@ -1,4 +1,4 @@
-package f
+package guf
 
 // CloneMap returns copy of source map.
 func CloneMap[K comparable, V any](s map[K]V) map[K]V {

@@ -1,16 +1,16 @@
-package f_test
+package guf_test
 
 import (
 	"testing"
 
-	"github.com/ek220/f"
+	"github.com/ek220/guf"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestPtr(t *testing.T) {
 	t.Parallel()
 
-	ptr := f.Ptr(13)
+	ptr := guf.Ptr(13)
 	assert.NotNil(t, ptr)
 	assert.Equal(t, 13, *ptr)
 }
@@ -18,10 +18,10 @@ func TestPtr(t *testing.T) {
 func TestDerefOrDefault(t *testing.T) {
 	t.Parallel()
 
-	assert.Equal(t, "", f.DerefOrDefault[string](nil))
-	assert.Equal(t, "foo", f.DerefOrDefault(f.Ptr("foo")))
+	assert.Equal(t, "", guf.DerefOrDefault[string](nil))
+	assert.Equal(t, "foo", guf.DerefOrDefault(guf.Ptr("foo")))
 
-	z := f.DerefOrDefault[ts](nil)
+	z := guf.DerefOrDefault[ts](nil)
 	assert.Nil(t, z.P)
 	assert.Equal(t, int32(0), z.I)
 	assert.Equal(t, "", z.S)
@@ -30,10 +30,10 @@ func TestDerefOrDefault(t *testing.T) {
 func TestDerefOr(t *testing.T) {
 	t.Parallel()
 
-	assert.Equal(t, "def", f.DerefOr(nil, "def"))
-	assert.Equal(t, "foo", f.DerefOr(f.Ptr("foo"), "def"))
+	assert.Equal(t, "def", guf.DerefOr(nil, "def"))
+	assert.Equal(t, "foo", guf.DerefOr(guf.Ptr("foo"), "def"))
 
-	z := f.DerefOr(nil, ts{P: f.Ptr[uint64](13), I: 4, S: "bar"})
+	z := guf.DerefOr(nil, ts{P: guf.Ptr[uint64](13), I: 4, S: "bar"})
 	assert.NotNil(t, z.P)
 	assert.Equal(t, uint64(13), *z.P)
 	assert.Equal(t, int32(4), z.I)
