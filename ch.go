@@ -8,6 +8,7 @@ func SliceToCh[T any](s []T) <-chan T {
 		for _, v := range s {
 			ch <- v
 		}
+
 		close(ch)
 	}()
 
@@ -34,6 +35,7 @@ func FilterCh[T any](s <-chan T, pred func(T) bool) <-chan T {
 				ch <- v
 			}
 		}
+
 		close(ch)
 	}()
 
@@ -48,6 +50,7 @@ func MapCh[T, R any](s <-chan T, f func(T) R) <-chan R {
 		for v := range s {
 			ch <- f(v)
 		}
+
 		close(ch)
 	}()
 
@@ -66,6 +69,7 @@ func SplitCh[T any](s <-chan T, pred func(T) bool) (<-chan T, <-chan T) {
 				t <- v
 			}
 		}
+
 		close(t)
 	}(SliceToCh(slice))
 
@@ -75,6 +79,7 @@ func SplitCh[T any](s <-chan T, pred func(T) bool) (<-chan T, <-chan T) {
 				f <- v
 			}
 		}
+
 		close(f)
 	}(SliceToCh(slice))
 

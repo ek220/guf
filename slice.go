@@ -11,6 +11,7 @@ func CloneSlice[T any](s []T) []T {
 // FilterSlice returns a slice of the values of the source slice satisfying the predicate.
 func FilterSlice[T any](s []T, pred func(T) bool) []T {
 	r := []T{}
+
 	for _, v := range s {
 		if pred(v) {
 			r = append(r, v)
@@ -34,6 +35,7 @@ func MapSlice[T, R any](s []T, f func(T) R) []R {
 func SplitSlice[T any](s []T, pred func(T) bool) ([]T, []T) {
 	t := []T{}
 	f := []T{}
+
 	for _, v := range s {
 		if pred(v) {
 			t = append(t, v)
