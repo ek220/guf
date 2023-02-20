@@ -3,9 +3,7 @@ package f
 // CloneSlice returns copy of source slice
 func CloneSlice[T any](s []T) []T {
 	r := make([]T, len(s))
-	for i, v := range s {
-		r[i] = v
-	}
+	copy(r, s)
 	return r
 }
 
