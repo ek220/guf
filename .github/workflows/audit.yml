@@ -1,4 +1,4 @@
-name: Audit
+name: Go
 
 on:
   push:
@@ -7,10 +7,11 @@ on:
     branches: [main]
 
 jobs:
-  audit:
+  build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Set up Go
         uses: actions/setup-go@v3
@@ -25,3 +26,9 @@ jobs:
 
       - name: Test
         run: go test -v -race ./...
+
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          # Optional: version of golangci-lint to use in form of v1.2 or v1.2.3 or `latest` to use the latest version
+          version: latest
