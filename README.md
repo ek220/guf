@@ -2,7 +2,7 @@
 
 Golang Utility Functions
 
-[![Go](https://github.com/ek220/guf/actions/workflows/audit.yml/badge.svg?branch=main)](https://github.com/ek220/guf/actions/workflows/audit.yml)
+[![Go](https://github.com/ek220/guf/actions/workflows/go.yml/badge.svg)](https://github.com/ek220/guf/actions/workflows/go.yml)
 
 #### Ptr and deref functions
 
