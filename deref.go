@@ -1,7 +1,16 @@
 package guf
 
-// Ptr return pointer to value.
+// Ptr returns pointer to value.
 func Ptr[T any](value T) *T {
+	return &value
+}
+
+// PtrIf returns pointer to value if predicate is true.
+func PtrIf[T any](value T, pred func() bool) *T {
+	if !pred() {
+		return nil
+	}
+
 	return &value
 }
 

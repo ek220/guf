@@ -6,13 +6,14 @@ Golang Utility Functions
 
 #### Ptr and deref functions
 
-- `Ptr`
-- `DerefOrDefault`
-- `DerefOr`
+- `Ptr` - return pointer to value
+- `PtrIf` - return pointer to value if predicate is true
+- `DerefOrDefault` - return dereferenced value of poiner or default value
+- `DerefOr` - return dereferenced value of poiner or passed value
 
 #### Slice functions
 
-- `CloneSlice`
+- `CloneSlice` - 
 - `FilterSlice`
 - `MapSlice`
 - `SplitSlice`

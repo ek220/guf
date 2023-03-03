@@ -15,6 +15,17 @@ func TestPtr(t *testing.T) {
 	assert.Equal(t, 13, *ptr)
 }
 
+func TestPtrIf(t *testing.T) {
+	t.Parallel()
+
+	ptr := guf.PtrIf("foo", func() bool { return true })
+	assert.NotNil(t, ptr)
+	assert.Equal(t, "foo", *ptr)
+
+	ptr = guf.PtrIf("foo", func() bool { return false })
+	assert.Nil(t, ptr)
+}
+
 func TestDerefOrDefault(t *testing.T) {
 	t.Parallel()
 
