@@ -73,3 +73,10 @@ func TestSplitSlice(t *testing.T) {
 	assert.Equal(t, []string{"a", "bc", "hello"}, sT)
 	assert.Equal(t, []string{"def", "foo"}, sF)
 }
+
+func TestReverseSlice(t *testing.T) {
+	t.Parallel()
+
+	assert.Equal(t, []int{5, 4, 3, 2, 1}, guf.ReverseSlice([]int{1, 2, 3, 4, 5}))
+	assert.Equal(t, []int{}, guf.ReverseSlice([]int{}))
+}

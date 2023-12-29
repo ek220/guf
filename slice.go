@@ -46,3 +46,13 @@ func SplitSlice[T any](s []T, pred func(T) bool) ([]T, []T) {
 
 	return t, f
 }
+
+// ReverseSlice reverses slice.
+func ReverseSlice[T any](s []T) []T {
+	r := make([]T, len(s))
+	for i := 0; i < len(s); i++ {
+		r[i] = s[len(s)-1-i]
+	}
+
+	return r
+}
